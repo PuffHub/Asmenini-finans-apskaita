@@ -33,6 +33,8 @@ class TransactionController extends Controller
             'description' => 'nullable|string|max:255',
         ]);
 
+        $validated['user_id'] = auth()->id(); // Add current user's ID
+
         Transaction::create($validated);
 
         return redirect()->route('transactions.index')->with('success', 'Operacija sukurta sėkmingai.');
