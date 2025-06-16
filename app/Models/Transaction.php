@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Transaction extends Model
 {
-    use HasFactory;  // pridėta čia
+    use HasFactory;  
 
     protected $fillable = [
         'user_id',
         'category_id',
         'amount',
-        'type',         // pridėta
+        'type',         
         'date',
         'description',
     ];

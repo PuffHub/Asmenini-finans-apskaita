@@ -11,7 +11,7 @@ class DashboardController extends Controller
     {
         $userId = auth()->id();
 
-        // Calculate sums
+
         $totalIncome  = Transaction::where('user_id', $userId)
                                    ->where('type', 'income')
                                    ->sum('amount');
@@ -22,7 +22,7 @@ class DashboardController extends Controller
 
         $balance = $totalIncome - $totalExpense;
 
-        // Pass to view
+  
         return view('dashboard', compact('totalIncome', 'totalExpense', 'balance'));
     }
 }
